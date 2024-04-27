@@ -13,7 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Banco {
     public static void main(String[] args) {
-        // Criação das lojas, funcionários e clientes
+        
         Loja loja1 = new Loja("Loja1", 0.0);
         Loja loja2 = new Loja("Loja2", 0.0);
         Funcionario func1 = new Funcionario("Func1", loja1);
@@ -26,7 +26,7 @@ public class Banco {
         Cliente cliente4 = new Cliente("Cliente4", 1000.0, loja1, loja2);
         Cliente cliente5 = new Cliente("Cliente5", 1000.0, loja1, loja2);
 
-        // Início das threads
+        
         func1.start();
         func2.start();
         func3.start();
@@ -37,7 +37,7 @@ public class Banco {
         cliente4.start();
         cliente5.start();
 
-        // Espera todas as threads terminarem
+        
         try {
             func1.join();
             func2.join();
@@ -52,7 +52,7 @@ public class Banco {
             e.printStackTrace();
         }
 
-        // Exibir saldos finais
+        
         System.out.println("Saldo final das lojas:");
         loja1.mostrarSaldoFinal();
         loja2.mostrarSaldoFinal();
